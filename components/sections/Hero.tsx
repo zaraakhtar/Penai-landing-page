@@ -12,16 +12,16 @@ export default function Hero() {
         className="max-w-[800px]"
       >
         <h1
-          className="text-[40px] md:text-[60px] font-bold leading-[1.0] tracking-[0.005em] text-transparent bg-clip-text"
+          className="text-transparent bg-clip-text text-[40px] md:text-[60px] font-bold leading-[1.0] tracking-[0.005em]"
           style={{
             fontFamily: 'var(--font-dm-sans)',
-            backgroundImage: 'linear-gradient(135deg, #7e7e7e 0%, #ffffff 50%)'
+            backgroundImage: 'linear-gradient(135deg, var(--color-heading-grey) 0%, #ffffff 50%)'
           }}
         >
-          Lorem ipsum dolor sit amet consectetur
+          Lorem ipsum dolor sit amet <br /> consectetur
         </h1>
 
-        <p className="mt-8 text-[16px] md:text-[18px] font-medium text-[#ecedee] max-w-[700px] mx-auto leading-[1.6]">
+        <p className="mt-8 text-[16px] md:text-[18px] font-medium text-subheading max-w-[700px] mx-auto leading-[1.6]">
           Arcu phasellus enim leo nulla tortor faucibus. Sed odio ultrices est vivamus mauris fames et. Sed lacus purus in tellus.
         </p>
 

@@ -72,7 +72,7 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -20 }}
             className="absolute top-24 left-0 w-full px-6 md:hidden"
           >
-            <div className="rounded-2xl border border-white/10 bg-[#0a0a0a]/90 p-6 backdrop-blur-xl">
+            <div className="glass rounded-2xl p-6 shadow-2xl">
               <div className="flex flex-col gap-4">
                 {links.map((link) => (
                   <Link
