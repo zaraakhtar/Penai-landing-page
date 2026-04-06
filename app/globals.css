@@ -10,6 +10,17 @@
   --color-foreground: var(--foreground);
 }
 
+@layer utilities {
+  .btn-primary-gradient {
+    background: linear-gradient(to right, #301a3a 10%, #442155 100%);
+    transition: all 0.3s ease;
+  }
+  .btn-primary-gradient:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
