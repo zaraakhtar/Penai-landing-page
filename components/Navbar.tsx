@@ -7,10 +7,10 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
-  { name: "Home",      href: "/",           active: true  },
+  { name: "Home", href: "/", active: true },
   { name: "SecrtChat", href: "/secretchat", active: false },
-  { name: "GenPen",    href: "/genpen",     active: false },
-  { name: "Contact",   href: "/contact",    active: false },
+  { name: "GenPen", href: "/genpen", active: false },
+  { name: "Contact", href: "/contact", active: false },
 ];
 
 export default function Navbar() {
@@ -21,13 +21,13 @@ export default function Navbar() {
       <nav
         id="main-navbar"
         className="fixed top-0 left-0 z-50 w-full"
-        style={{ paddingTop: "28px", paddingLeft: "76px", paddingRight: "76px" }}
+        style={{ paddingTop: "28px" }}
       >
         <div
           className="flex items-center w-full"
           style={{
             height: "72px",
-            maxWidth: "1288px",
+            maxWidth: "1688px",
             margin: "0 auto",
             backdropFilter: "blur(2px)",
             WebkitBackdropFilter: "blur(2px)",
@@ -41,6 +41,7 @@ export default function Navbar() {
               height={44}
               priority
               className="h-11 w-auto object-contain"
+              style={{ width: "auto" }}
             />
           </Link>
 
@@ -55,8 +56,8 @@ export default function Navbar() {
                   ((e.currentTarget as HTMLAnchorElement).style.color = "#ECEDEE")
                 }
                 onMouseLeave={(e) =>
-                  ((e.currentTarget as HTMLAnchorElement).style.color =
-                    link.active ? "#ECEDEE" : "#4C5155")
+                ((e.currentTarget as HTMLAnchorElement).style.color =
+                  link.active ? "#ECEDEE" : "#4C5155")
                 }
               >
                 {link.name}
@@ -126,8 +127,8 @@ export default function Navbar() {
                     ((e.currentTarget as HTMLAnchorElement).style.color = "#ECEDEE")
                   }
                   onMouseLeave={(e) =>
-                    ((e.currentTarget as HTMLAnchorElement).style.color =
-                      link.active ? "#ECEDEE" : "#4C5155")
+                  ((e.currentTarget as HTMLAnchorElement).style.color =
+                    link.active ? "#ECEDEE" : "#4C5155")
                   }
                 >
                   {link.name}
