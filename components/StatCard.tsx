@@ -28,7 +28,7 @@ export default function StatCard({ value, description }: StatCardProps) {
           <div className="absolute inset-x-0 bottom-0 h-[160px] bg-[radial-gradient(70%_90%_at_50%_100%,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0)_70%)]" />
 
           {/* rings group (ovals, concentric at lower center) */}
-          <div className="absolute inset-0 opacity-90 bottom-[-240px]">
+          <div className="absolute inset-0 opacity-80 bottom-[-240px]">
             {/* center radial glow (same origin as rings) */}
             <div
               className="absolute left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2"
