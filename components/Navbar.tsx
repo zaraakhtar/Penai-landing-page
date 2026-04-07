@@ -7,9 +7,9 @@ import { Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
   { name: "Home", href: "/", active: true },
-  { name: "SecrtChat", href: "/secretchat", active: false },
-  { name: "GenPen", href: "/genpen", active: false },
-  { name: "Contact", href: "/contact", active: false },
+  { name: "SecrtChat", href: "/", active: false },
+  { name: "GenPen", href: "/", active: false },
+  { name: "Contact", href: "/", active: false },
 ];
 
 export default function Navbar() {
@@ -67,7 +67,8 @@ export default function Navbar() {
           <div className="flex-1" />
 
           <div className="flex items-center gap-3">
-            <button
+            <Link
+              href="/"
               id="navbar-dashboard-btn"
               className="hidden md:flex items-center justify-center font-semibold text-[14px] tracking-wide transition-all duration-200 hover:brightness-110 hover:-translate-y-px active:scale-95"
               style={{
@@ -80,7 +81,7 @@ export default function Navbar() {
               }}
             >
               Dashboard
-            </button>
+            </Link>
 
             <button
               id="navbar-menu-toggle"
@@ -127,7 +128,8 @@ export default function Navbar() {
 
             <div style={{ height: "1px", background: "rgba(255,255,255,0.07)" }} />
 
-            <button
+            <Link
+              href="/"
               className="w-full py-3 text-[15px] font-semibold rounded-2xl transition-all duration-200 hover:brightness-110 active:scale-95"
               style={{
                 background: "linear-gradient(to bottom right, #301A3A, #442155)",
@@ -135,7 +137,7 @@ export default function Navbar() {
               }}
             >
               Dashboard
-            </button>
+            </Link>
           </div>
         </div>
       )}
