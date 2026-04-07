@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import DashboardCornerGlow from "@/components/DashboardCornerGlow";
 
 export default function DashboardShowcase() {
@@ -41,13 +40,7 @@ export default function DashboardShowcase() {
       {/* bottom black fade (sits ABOVE the shared glow, BELOW content) */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[1020px] bg-gradient-to-b from-transparent via-black/70 to-black" />
 
-      <motion.div
-        initial={{ opacity: 0, y: 14 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        className="relative z-20 flex w-full max-w-[1100px] flex-col items-center"
-      >
+      <div className="relative z-20 flex w-full max-w-[1100px] flex-col items-center">
         <div className="flex max-w-[760px] flex-col items-center gap-4 text-center">
           <h2
             className="w-full text-center font-bold leading-[1.05] tracking-[0.005em] text-transparent bg-clip-text text-[42px] md:text-[48px]"
@@ -74,7 +67,7 @@ export default function DashboardShowcase() {
             <DashboardCornerGlow
               className="pointer-events-none absolute z-10"
               style={{
-                right: -430,
+                right: -330,
                 bottom: -120,
               }}
             />
@@ -91,7 +84,7 @@ export default function DashboardShowcase() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

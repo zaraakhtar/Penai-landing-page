@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import SectionHeading from "@/components/SectionHeading";
 import StatCard from "@/components/StatCard";
 
@@ -10,13 +9,7 @@ export default function StatsSection() {
       {/* solid backdrop to hide page grid */}
       <div className="pointer-events-none absolute inset-0 -z-10 bg-black" />
 
-      <motion.div
-        initial={{ opacity: 0, y: 14 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        className="relative z-10 flex w-full max-w-[1024px] flex-col items-center justify-center gap-[64px]"
-      >
+      <div className="relative z-10 flex w-full max-w-[1024px] flex-col items-center justify-center gap-[64px]">
         <SectionHeading
           title="Lorem ipsum dolor sit amet consectetur."
           subtitle="Lorem ipsum dolor sit amet consectetur. Lacus aliquet vitae nulla"
@@ -57,7 +50,7 @@ export default function StatsSection() {
             }
           />
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

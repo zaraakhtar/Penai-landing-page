@@ -1,16 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export default function Hero() {
   return (
     <section className="relative z-10 flex flex-col items-center pt-[200px] pb-[30px] px-6 overflow-hidden">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="flex flex-col items-center gap-[40px] w-full max-w-[768px]"
-      >
+      <div className="flex flex-col items-center gap-[40px] w-full max-w-[768px]">
         <div className="flex flex-col items-center gap-[12px] w-full">
           <h1
             className="w-full text-center font-bold tracking-[0.005em] text-transparent bg-clip-text"
@@ -42,7 +35,7 @@ export default function Hero() {
         >
           Book a demo
         </button>
-      </motion.div>
+      </div>
     </section>
   );
 }

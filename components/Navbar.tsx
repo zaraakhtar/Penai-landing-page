@@ -4,7 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
   { name: "Home", href: "/", active: true },
@@ -96,60 +95,50 @@ export default function Navbar() {
         </div>
       </nav>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            key="mobile-menu"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.18, ease: "easeOut" }}
-            className="fixed z-40 md:hidden"
-            style={{ top: "116px", left: "16px", right: "16px" }}
+      {isOpen && (
+        <div className="fixed z-40 md:hidden" style={{ top: "116px", left: "16px", right: "16px" }}>
+          <div
+            className="flex flex-col gap-5 rounded-2xl p-6"
+            style={{
+              backdropFilter: "blur(16px)",
+              WebkitBackdropFilter: "blur(16px)",
+              background: "rgba(28, 28, 28, 0.92)",
+              border: "1px solid rgba(255,255,255,0.07)",
+            }}
           >
-            <div
-              className="flex flex-col gap-5 rounded-2xl p-6"
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-base font-medium transition-colors duration-200"
+                style={{ color: link.active ? "#ECEDEE" : "#4C5155" }}
+                onMouseEnter={(e) =>
+                  ((e.currentTarget as HTMLAnchorElement).style.color = "#ECEDEE")
+                }
+                onMouseLeave={(e) =>
+                ((e.currentTarget as HTMLAnchorElement).style.color =
+                  link.active ? "#ECEDEE" : "#4C5155")
+                }
+              >
+                {link.name}
+              </Link>
+            ))}
+
+            <div style={{ height: "1px", background: "rgba(255,255,255,0.07)" }} />
+
+            <button
+              className="w-full py-3 text-[15px] font-semibold rounded-2xl transition-all duration-200 hover:brightness-110 active:scale-95"
               style={{
-                backdropFilter: "blur(16px)",
-                WebkitBackdropFilter: "blur(16px)",
-                background: "rgba(28, 28, 28, 0.92)",
-                border: "1px solid rgba(255,255,255,0.07)",
+                background: "linear-gradient(to bottom right, #301A3A, #442155)",
+                color: "#ECEDEE",
               }}
             >
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-base font-medium transition-colors duration-200"
-                  style={{ color: link.active ? "#ECEDEE" : "#4C5155" }}
-                  onMouseEnter={(e) =>
-                    ((e.currentTarget as HTMLAnchorElement).style.color = "#ECEDEE")
-                  }
-                  onMouseLeave={(e) =>
-                  ((e.currentTarget as HTMLAnchorElement).style.color =
-                    link.active ? "#ECEDEE" : "#4C5155")
-                  }
-                >
-                  {link.name}
-                </Link>
-              ))}
-
-              <div style={{ height: "1px", background: "rgba(255,255,255,0.07)" }} />
-
-              <button
-                className="w-full py-3 text-[15px] font-semibold rounded-2xl transition-all duration-200 hover:brightness-110 active:scale-95"
-                style={{
-                  background: "linear-gradient(to bottom right, #301A3A, #442155)",
-                  color: "#ECEDEE",
-                }}
-              >
-                Dashboard
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              Dashboard
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
