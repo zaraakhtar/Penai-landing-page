@@ -14,6 +14,7 @@ export default function Hero() {
               backgroundImage: "linear-gradient(92.48deg, #7E7E7E -14.98%, #FFFFFF 49.56%)"
             }}
           >
+            {/* //this is a comment */}
             Lorem ipsum dolor sit amet consectetur
           </h1>
 
