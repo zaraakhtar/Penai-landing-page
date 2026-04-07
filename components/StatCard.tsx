@@ -17,7 +17,12 @@ export default function StatCard({ value, description }: StatCardProps) {
 
   return (
     <div className="flex w-full max-w-[317.33px] flex-col items-center gap-[10px]">
-      <div className="relative isolate flex h-[240px] w-full items-center justify-center overflow-hidden rounded-[24px] border border-[#2F2F2F] bg-[linear-gradient(180deg,rgba(27,27,27,1)_0%,rgba(18,18,18,1)_100%)] p-[30px] shadow-[0_30px_70px_rgba(0,0,0,0.55)]">
+      <div className="relative isolate w-full overflow-hidden rounded-[24px] shadow-[0_30px_70px_rgba(0,0,0,0.55)]">
+        {/* gradient border (Figma-style) */}
+        <div className="absolute inset-0 rounded-[24px] bg-gradient-to-b from-[#505050]/55 via-[#505050]/25 to-[#505050]/10" />
+
+        {/* card body */}
+        <div className="relative flex h-[200px] w-full items-center justify-center rounded-[24px] bg-[#1C1C1C]/70 p-[30px] backdrop-blur-[86.5px]">
         <div className="pointer-events-none absolute inset-0 -z-10">
           {/* bottom soft highlight */}
           <div className="absolute inset-x-0 bottom-0 h-[160px] bg-[radial-gradient(70%_90%_at_50%_100%,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0)_70%)]" />
@@ -62,6 +67,7 @@ export default function StatCard({ value, description }: StatCardProps) {
           }}
         >
           {value}
+        </div>
         </div>
       </div>
 
