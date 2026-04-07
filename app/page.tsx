@@ -3,6 +3,7 @@ import AngularGradient from "@/components/AngularGradient";
 import Supporters from "@/components/sections/Supporters";
 import Hero from "@/components/sections/Hero";
 import DashboardShowcase from "@/components/sections/DashboardShowcase";
+import StatsSection from "@/components/sections/StatsSection";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <Supporters />
       <DashboardShowcase />
+      <StatsSection />
 
     </main>
   );

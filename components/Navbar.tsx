@@ -21,13 +21,13 @@ export default function Navbar() {
       <nav
         id="main-navbar"
         className="fixed top-0 left-0 z-50 w-full"
-        style={{ paddingTop: "28px" }}
+        style={{ paddingTop: "28px",paddingLeft: "56px",paddingRight: "56px" }}
       >
         <div
           className="flex items-center w-full"
           style={{
             height: "72px",
-            maxWidth: "1688px",
+            maxWidth: "auto",
             margin: "0 auto",
             backdropFilter: "blur(2px)",
             WebkitBackdropFilter: "blur(2px)",

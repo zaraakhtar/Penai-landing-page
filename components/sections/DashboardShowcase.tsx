@@ -20,7 +20,7 @@ export default function DashboardShowcase() {
 
   return (
     <section
-      className="relative z-10 flex flex-col items-center pb-32 px-6 overflow-hidden"
+      className="relative flex flex-col items-center pb-32 px-6"
       style={{
         marginTop: GRADIENT.overlapMarginTopPx,
         paddingTop: GRADIENT.contentPaddingTopPx,
@@ -28,31 +28,25 @@ export default function DashboardShowcase() {
     >
       {/* smooth blend: avoid harsh line above */}
       <div className="pointer-events-none absolute inset-0 -z-10">
+        {/* bottom-half black gradient (top stays transparent) */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_45%,rgba(0,0,0,0.75)_70%,rgba(0,0,0,1)_100%)]" />
+
         {/* top blend (smooth handoff from previous section) */}
         <div
           className="absolute inset-x-0 top-0 bg-gradient-to-b from-transparent via-black/-190 to-black/-1250"
           style={{ height: GRADIENT.topFadeHeightPx }}
         />
-
-        {/* keep vignette lower so it starts behind the image */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `radial-gradient(80% 70% at 50% ${GRADIENT.vignetteCenterYPercent}%, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 58%)`,
-          }}
-        />
-
-        {/* bottom fade that covers lower part and continues down */}
-        <div className="absolute inset-x-0 bottom-0 h-[520px] bg-gradient-to-b from-transparent via-black/55 to-black" />
-        <div className="absolute inset-x-0 -bottom-[420px] h-[520px] bg-black" />
       </div>
+
+      {/* bottom black fade (sits ABOVE the shared glow, BELOW content) */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[1020px] bg-gradient-to-b from-transparent via-black/70 to-black" />
 
       <motion.div
         initial={{ opacity: 0, y: 14 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7, ease: "easeOut" }}
-        className="flex w-full max-w-[1100px] flex-col items-center"
+        className="relative z-20 flex w-full max-w-[1100px] flex-col items-center"
       >
         <div className="flex max-w-[760px] flex-col items-center gap-4 text-center">
           <h2
@@ -74,16 +68,27 @@ export default function DashboardShowcase() {
         </div>
 
         <div className="mt-12 w-full">
-          <div className="relative mx-auto w-full max-w-[1040px] overflow-hidden rounded-[18px] shadow-[0_30px_90px_rgba(0,0,0,0.55)]">
-            <DashboardCornerGlow className="z-0 bottom-[4px] right-[124px]" />
-            <Image
-              src="/images/Dashboard.png"
-              alt="Dashboard preview"
-              width={1440}
-              height={1023}
-              priority={false}
-              className="relative z-10 h-auto w-full select-none"
+          <div className="relative mx-auto w-full max-w-[1040px]">
+            {/* Glow anchored to the bottom-right of the dashboard image box.
+                It can spill into the next section because this section doesn't clip overflow. */}
+            <DashboardCornerGlow
+              className="pointer-events-none absolute z-10"
+              style={{
+                right: -430,
+                bottom: -120,
+              }}
             />
+
+            <div className="relative z-20 overflow-hidden rounded-[18px] shadow-[0_30px_90px_rgba(0,0,0,0.55)]">
+              <Image
+                src="/images/Dashboard.png"
+                alt="Dashboard preview"
+                width={1440}
+                height={1023}
+                priority={false}
+                className="h-auto w-full select-none"
+              />
+            </div>
           </div>
         </div>
       </motion.div>
