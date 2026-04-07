@@ -6,8 +6,14 @@ type StatCardProps = {
 };
 
 export default function StatCard({ value, description }: StatCardProps) {
-  // Oval control: 1 = perfect circle, >1 = wider than tall
-  const RING_ASPECT_X = 1.2;
+  // Per-ring oval control: 1 = circle, >1 = wider than tall
+  const RINGS = [
+    { size: 320, aspectX: 1.25 },
+    { size: 260, aspectX: 1.22 },
+    { size: 200, aspectX: 1.20 },
+    { size: 140, aspectX: 1.18 },
+    { size: 80, aspectX: 1.14 },
+  ] as const;
 
   return (
     <div className="flex w-full max-w-[317.33px] flex-col items-center gap-[10px]">
@@ -18,13 +24,25 @@ export default function StatCard({ value, description }: StatCardProps) {
 
           {/* rings group (ovals, concentric at lower center) */}
           <div className="absolute inset-0 opacity-90 bottom-[-240px]">
-            {([320, 260, 200, 140, 80] as const).map((size) => (
+            {/* center radial glow (same origin as rings) */}
+            <div
+              className="absolute left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2"
+              style={{
+                width: 420,
+                height: 420,
+                background:
+                  "radial-gradient(circle, rgba(80,80,80,0.55) 0%, rgba(80,80,80,0) 65%)",
+                filter: "blur(148.65px)",
+              }}
+            />
+
+            {RINGS.map(({ size, aspectX }) => (
               <div
                 key={size}
                 className="absolute left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10"
                 style={{
                   height: size,
-                  width: Math.round(size * RING_ASPECT_X),
+                  width: Math.round(size * aspectX),
                 }}
               />
             ))}
@@ -32,8 +50,6 @@ export default function StatCard({ value, description }: StatCardProps) {
           {/* inner glow at bottom */}
           <div className="absolute left-1/2 bottom-[-70px] h-[220px] w-[360px] -translate-x-1/2 bg-white/10 blur-[80px]" />
 
-          {/* subtle bottom vignette */}
-          <div className="absolute inset-x-0 bottom-0 h-[150px] bg-gradient-to-b from-transparent to-black/70" />
         </div>
 
         <div
