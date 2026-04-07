@@ -21,34 +21,86 @@ const CONIC_GRADIENT = `conic-gradient(
 
 export default function AngularGradient() {
   return (
-    <>
+    <div
+      id="angular-gradient-composition"
+      className="pointer-events-none absolute"
+      style={{
+        width: "1454px",
+        height: "1132px",
+        left: "calc(50% - 1454px / 2)",
+        top: "99px",
+        zIndex: 0,
+        isolation: "isolate",
+      }}
+    >
+      {/* left angular */}
       <div
-        className="pointer-events-none absolute z-0"
         style={{
-          width: "auto",
-          height: "auto",
-          top: "0",
-          bottom: "0",
-          left: "49.2%",
-          right: "0",
-          transform: "rotate(90deg) scaleX(-1)",
+          position: "absolute",
+          left: "0%",
+          right: "50%",
+          top: "16.52%",
+          bottom: "19.26%",
           background: CONIC_GRADIENT,
+          transform: "rotate(-90deg)",
         }}
       />
 
+      {/* right angular */}
       <div
-        className="pointer-events-none absolute z-0"
         style={{
-          width: "auto",
-          height: "auto",
-          top: "0",
-          bottom: "0",
-          left: "0",
-          right: "49.2%",
-          transform: "rotate(90deg) scaleX(-1) scaleY(-1)",
+          position: "absolute",
+          left: "50%",
+          right: "0%",
+          top: "16.52%",
+          bottom: "19.26%",
           background: CONIC_GRADIENT,
+          transform: "matrix(0, -1, -1, 0, 0, 0)",
         }}
       />
-    </>
+
+      {/* blur bottom */}
+      <div
+        style={{
+          position: "absolute",
+          left: "-16.37%",
+          right: "-15.54%",
+          top: "59.89%",
+          bottom: "0%",
+          background: "rgba(0, 2, 18, 0.02)",
+          filter: "blur(50px)",
+          backdropFilter: "blur(117px)",
+          WebkitBackdropFilter: "blur(117px)",
+        }}
+      />
+
+      {/* blur top */}
+      <div
+        style={{
+          position: "absolute",
+          left: "-10.32%",
+          right: "-9.35%",
+          top: "3.98%",
+          bottom: "51.94%",
+          background: "rgba(0, 2, 18, 0.07)",
+          filter: "blur(50px)",
+          backdropFilter: "blur(123.95px)",
+          WebkitBackdropFilter: "blur(123.95px)",
+        }}
+      />
+
+      {/* extra glow */}
+      <div
+        style={{
+          position: "absolute",
+          left: "30.47%",
+          right: "29.5%",
+          top: "56.54%",
+          bottom: "30.04%",
+          background: "#505050",
+          filter: "blur(105.5px)",
+        }}
+      />
+    </div>
   );
 }
