@@ -27,8 +27,8 @@ export default function DashboardShowcase() {
     >
       {/* smooth blend: avoid harsh line above */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        {/* bottom-half black gradient (top stays transparent) */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0)_45%,rgba(0,0,0,0.75)_70%,rgba(0,0,0,1)_100%)]" />
+        {/* bottom-half page-color gradient (top stays transparent) */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(28,28,28,0)_0%,rgba(28,28,28,0)_45%,rgba(28,28,28,0.78)_70%,rgba(28,28,28,1)_100%)]" />
 
         {/* top blend (smooth handoff from previous section) */}
         <div
@@ -38,7 +38,7 @@ export default function DashboardShowcase() {
       </div>
 
       {/* bottom black fade (sits ABOVE the shared glow, BELOW content) */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[1020px] bg-gradient-to-b from-transparent via-black/70 to-black" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[1020px] bg-gradient-to-b from-transparent via-[#1C1C1C]/70 to-[#1C1C1C]" />
 
       <div className="relative z-20 flex w-full max-w-[1100px] flex-col items-center">
         <div className="flex max-w-[760px] flex-col items-center gap-4 text-center">
