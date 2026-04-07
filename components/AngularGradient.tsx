@@ -21,86 +21,109 @@ const CONIC_GRADIENT = `conic-gradient(
 
 export default function AngularGradient() {
   return (
-    <div
-      id="angular-gradient-composition"
-      className="pointer-events-none absolute"
-      style={{
-        width: "1454px",
-        height: "1132px",
-        left: "calc(50% - 1454px / 2)",
-        top: "20px",
-        zIndex: 0,
-        isolation: "isolate",
-      }}
-    >
-      {/* left angular */}
+    <>
+      {/* Surrounding Ambient Atmosphere */}
       <div
+        className="pointer-events-none fixed inset-0 z-[-1]"
         style={{
-          position: "absolute",
-          left: "0%",
-          right: "50%",
-          top: "16.52%",
-          bottom: "19.26%",
-          background: CONIC_GRADIENT,
-          transform: "rotate(-90deg)",
+          background: `
+            radial-gradient(circle at 50% 30%, rgba(121, 56, 178, 0.45) 0%, transparent 80%),
+            radial-gradient(circle at 80% 20%, rgba(121, 56, 178, 0.25) 0%, transparent 60%),
+            radial-gradient(circle at 20% 80%, rgba(121, 56, 178, 0.25) 0%, transparent 60%)
+          `,
         }}
       />
 
-      {/* right angular */}
       <div
+        id="angular-gradient-composition"
+        className="pointer-events-none absolute"
         style={{
-          position: "absolute",
-          left: "50%",
-          right: "0%",
-          top: "16.52%",
-          bottom: "19.26%",
-          background: CONIC_GRADIENT,
-          transform: "matrix(0, -1, -1, 0, 0, 0)",
+          width: "1454px",
+          height: "1132px",
+          left: "calc(50% - 1454px / 2)",
+          top: "50px",
+          zIndex: 0,
+          isolation: "isolate",
         }}
-      />
+      >
+        {/* left angular */}
+        <div
+          style={{
+            position: "absolute",
+            left: "0%",
+            right: "50%",
+            top: "16.52%",
+            bottom: "19.26%",
+            background: CONIC_GRADIENT,
+            transform: "rotate(-90deg)",
+          }}
+        />
 
-      {/* blur bottom */}
-      <div
-        style={{
-          position: "absolute",
-          left: "-16.37%",
-          right: "-15.54%",
-          top: "59.89%",
-          bottom: "0%",
-          background: "rgba(0, 2, 18, 0.02)",
-          filter: "blur(50px)",
-          backdropFilter: "blur(117px)",
-          WebkitBackdropFilter: "blur(117px)",
-        }}
-      />
+        {/* right angular */}
+        <div
+          style={{
+            position: "absolute",
+            left: "50%",
+            right: "0%",
+            top: "16.52%",
+            bottom: "19.26%",
+            background: CONIC_GRADIENT,
+            transform: "matrix(0, -1, -1, 0, 0, 0)",
+          }}
+        />
 
-      {/* blur top */}
-      <div
-        style={{
-          position: "absolute",
-          left: "-10.32%",
-          right: "-9.35%",
-          top: "3.98%",
-          bottom: "51.94%",
-          background: "rgba(0, 2, 18, 0.07)",
-          filter: "blur(50px)",
-          backdropFilter: "blur(123.95px)",
-          WebkitBackdropFilter: "blur(123.95px)",
-        }}
-      />
+        {/* blur bottom */}
+        <div
+          style={{
+            position: "absolute",
+            left: "-16.37%",
+            right: "-15.54%",
+            top: "59.89%",
+            bottom: "0%",
+            background: "rgba(0, 2, 18, 0.02)",
+            filter: "blur(50px)",
+            backdropFilter: "blur(117px)",
+            WebkitBackdropFilter: "blur(117px)",
+          }}
+        />
 
-      {/* extra glow */}
+        {/* blur top */}
+        <div
+          style={{
+            position: "absolute",
+            left: "-10.32%",
+            right: "-9.35%",
+            top: "3.98%",
+            bottom: "51.94%",
+            background: "rgba(0, 2, 18, 0.07)",
+            filter: "blur(50px)",
+            backdropFilter: "blur(123.95px)",
+            WebkitBackdropFilter: "blur(123.95px)",
+          }}
+        />
+
+        {/* extra glow */}
+        <div
+          style={{
+            position: "absolute",
+            left: "30.47%",
+            right: "29.5%",
+            top: "56.54%",
+            bottom: "30.04%",
+            background: "#505050",
+            filter: "blur(105.5px)",
+          }}
+        />
+      </div>
       <div
         style={{
           position: "absolute",
-          left: "30.47%",
-          right: "29.5%",
-          top: "56.54%",
-          bottom: "30.04%",
-          background: "#505050",
-          filter: "blur(105.5px)",
+          inset: "-20%",
+          background: "radial-gradient(ellipse at center, rgba(121, 56, 178, 0.15) 0%, transparent 80%)",
+          zIndex: -1,
+          filter: "blur(40px)"
         }}
       />
-    </div>
+    </>
   );
 }
