@@ -24,7 +24,7 @@ export default function Supporters() {
         transition={{ duration: 0.6 }}
         className="flex flex-col items-center"
       >
-        <h2 className="text-[17px] font-semibold text-white mb-12 tracking-wide uppercase">
+        <h2 className="text-[19px] font-bold text-[#ECEDEE] mb-12 tracking-wide uppercase">
           Our Supporters
         </h2>
 
@@ -32,7 +32,7 @@ export default function Supporters() {
           {logos.map((logo, index) => (
             <span
               key={index}
-              className="text-[16px] font-medium text-white/30 transition-colors hover:text-white/60 cursor-default"
+              className="text-[16px] font-light text-[#FFFFFF] transition-colors hover:text-[#FFFFFF] cursor-default"
             >
               {logo}
             </span>

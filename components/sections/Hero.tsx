@@ -24,14 +24,7 @@ export default function Hero() {
             Lorem ipsum dolor sit amet consectetur
           </h1>
 
-          <p
-            className="w-full text-center font-normal tracking-[0.005em] text-[#ECEDEE]"
-            style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: "24px",
-              lineHeight: "32px",
-            }}
-          >
+          <p className="w-full text-center text-[24px] font-normal leading-[32px] tracking-[0.005em] text-[color:var(--color-text-primary)]/80">
             Arcu phasellus enim leo nulla tortor faucibus. Sed odio ultrices est vivamus mauris fames et. Sed lacus purus in tellus.
           </p>
         </div>

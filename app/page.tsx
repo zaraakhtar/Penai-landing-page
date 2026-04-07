@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import AngularGradient from "@/components/AngularGradient";
 import Supporters from "@/components/sections/Supporters";
 import Hero from "@/components/sections/Hero";
+import DashboardShowcase from "@/components/sections/DashboardShowcase";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Supporters />
+      <DashboardShowcase />
 
     </main>
   );
