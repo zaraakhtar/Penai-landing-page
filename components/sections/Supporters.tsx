@@ -12,7 +12,7 @@ export default function Supporters() {
   ];
 
   return (
-    <section className="relative z-10 flex flex-col items-center py-20 px-6">
+    <section className="relative z-10 flex flex-col items-center py-30 px-6">
       {/* The Light Shelf Effect */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[1px] bg-gradient-to-r from-transparent via-brand-purple-light/50 to-transparent shadow-[0_0_20px_rgba(68,33,85,0.5)]" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-[120px] bg-brand-purple-light/10 blur-[60px] rounded-full pointer-events-none" />
