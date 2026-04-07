@@ -28,7 +28,7 @@ export default function AngularGradient() {
         width: "1454px",
         height: "1132px",
         left: "calc(50% - 1454px / 2)",
-        top: "99px",
+        top: "20px",
         zIndex: 0,
         isolation: "isolate",
       }}
