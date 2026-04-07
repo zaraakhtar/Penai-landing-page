@@ -15,8 +15,8 @@ export default function DashboardCornerGlow({
       className={className}
       style={{
         position: "absolute",
-        width: 752,
-        height: 239,
+        width: 652,
+        height: 139,
         borderRadius: 9999,
         background: "#7F7F7F",
         opacity: 0.5,
